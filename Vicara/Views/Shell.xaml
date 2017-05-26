@@ -10,27 +10,50 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:views="using:Vicara.Views"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-      mc:Ignorable="d">
+      mc:Ignorable="d">  
+    
+    
+       
 
-    <Controls:HamburgerMenu x:Name="MyHamburgerMenu">
+        <Controls:HamburgerMenu x:Name="MyHamburgerMenu"   HamburgerBackground="Black"
+                    HamburgerForeground="White"
+                    NavAreaBackground="#FF2B2B2B"
+                    NavButtonBackground="#FFD13438"
+                    SecondarySeparator="Black"
+                    NavButtonForeground="White" HamburgerButtonVisibility="Collapsed">
 
-        <Controls:HamburgerMenu.PrimaryButtons>
+        <Controls:HamburgerMenu.PrimaryButtons  >
             <!--  mainpage button  -->
-            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:MainPage">
+            <Controls:HamburgerButtonInfo >             
+                 <Image Source="ms-appx:///Assets/Logo.jpg"/>
+        </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo >
+                <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Applications"
+                           FontSize="20" FontWeight="ExtraBold"/>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="Spotify"                                          
+                                          PageType="views:Spotify">
+                <Controls:HamburgerButtonInfo.NavigationTransitionInfo>
+                    <SuppressNavigationTransitionInfo />
+                </Controls:HamburgerButtonInfo.NavigationTransitionInfo>
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48"
                                 Height="48"
-                                Symbol="Home" />
+                                Symbol="MusicInfo" />
                     <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
-                               Text="Home" />
+                               Text="Spotify" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
+
+
         </Controls:HamburgerMenu.PrimaryButtons>
 
         <Controls:HamburgerMenu.SecondaryButtons>
             <!--  profile button  -->
-            <Controls:HamburgerButtonInfo ButtonType="Command">
+            <!--<Controls:HamburgerButtonInfo ButtonType="Command">
                 <Interactivity:Interaction.Behaviors>
                     <Core:EventTriggerBehavior EventName="Tapped">
                         <behaviors:MessageDialogAction Title="Show profile" Content="This is an example of a Command-type hamburger button. It does not navigate, only raises the Tapped event for some custom implementation." />
@@ -49,7 +72,7 @@
                                VerticalAlignment="Center"
                                Text="User profile" />
                 </StackPanel>
-            </Controls:HamburgerButtonInfo>
+            </Controls:HamburgerButtonInfo>-->
             <!--  settingspage button  -->
             <Controls:HamburgerButtonInfo x:Name="SettingsButton"
                                           PageParameter="0"
@@ -60,10 +83,10 @@
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48"
                                 Height="48"
-                                Symbol="Setting" />
+                                Symbol="Add" />
                     <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
-                               Text="Settings" />
+                               Text="Add Gesture" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
         </Controls:HamburgerMenu.SecondaryButtons>

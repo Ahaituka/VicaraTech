@@ -22,6 +22,7 @@ namespace Vicara.Views
             Instance = this;
             InitializeComponent();
             _settings = Services.SettingsServices.SettingsService.Instance;
+          //  MyHamburgerMenu.HamburgerButtonVisibility = Visibility.Collapsed;
         }
 
         public Shell(INavigationService navigationService) : this()
